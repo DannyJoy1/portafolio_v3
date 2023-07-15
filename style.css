@@ -1,0 +1,376 @@
+:root {
+    --color1: #ED4A65;
+    --color2: #22274F;
+}
+
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-size: 16px;
+    font-family: system-ui;
+    scroll-behavior: smooth;
+
+
+}
+
+body {
+    position: relative;
+    background-image: url(./images/fondooscuro.svg);
+}
+
+
+.on-scroll{
+    background: rgba(115, 115, 116, 0.31);
+    border-radius: 0 0 16px 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(6.1px);
+    -webkit-backdrop-filter: blur(6.1px);
+    border: 1px solid rgba(42, 37, 145, 0.49); 
+    transition: .2s ease-in;
+}
+
+header {
+    height: 3rem;
+    width: 100%;
+    position: fixed;
+    z-index: 999;
+
+
+}
+
+.nav-links {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+
+.nav-links ul, .nav-mobile ul{
+    gap: 2rem;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 100%;
+    padding: 1rem 0;
+}
+
+.nav-links ul li, .nav-mobile ul li {
+    list-style: none;
+
+}
+
+.nav-mobile ul li a,
+.nav-links ul li a {
+    text-decoration: none;
+    color: #ED4A65;
+    transition: all .2s ease;
+    font-weight: bold;
+
+}
+
+.nav-mobile {
+    display: none;
+    width: 100%;
+    background-color: black;
+    height: 4rem;
+    align-items: center;
+    position: fixed;
+    bottom: 0;
+    border-top: 1px solid white;
+}
+
+.nav-mobile ul li a i {
+    font-size: 1.5rem
+
+}
+
+.nav-links ul li a:hover,
+.nav-mobile ul li a:hover {
+    color: white;
+    transform: scale(1.5);
+
+
+}
+
+#home {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.hero {
+    width: 80%;
+    border: 1px solid rgb(106, 107, 136);
+    display: flex;
+    padding: 2rem;
+    justify-content: space-evenly;
+    gap: 2rem;
+    align-items: center;
+    background-image: url(./images/liquid-cheese.svg);
+    background-repeat: no-repeat;
+    background-size: cover;
+
+}
+
+.hero-name {
+    width: 60%;
+
+}
+
+.hero-name p {
+    margin-bottom: 1rem;
+    /* max-width: 586px; */
+    margin: 0 auto;
+    font-size: 1.2rem;
+    color: #dacbf8;
+    font-weight: 600;
+    text-wrap:balance;
+}
+
+.hero-name h1 {
+    display: flex;
+    letter-spacing: -.06em;
+    flex-direction: column;
+    justify-content: center;
+    /* align-items: center; */
+    margin-bottom: 2rem;
+    font-weight: 800;
+    margin: 0 0 16px;
+    gap: 1.5rem;
+
+}
+
+
+.hero-name h1 span {
+    color: white;
+    display: block;
+    position: relative;
+    line-height: 1.1;
+    letter-spacing: 1px;
+
+}
+
+.hero-name h1 span:nth-child(1) {
+    font-size: 4rem;
+    --content: 'DANNY MERINO';
+    --start-color: #007cf0;
+    --end-color: #00dfd8;
+    --delay: 0s
+}
+
+
+.hero-name h1 span:nth-child(2) {
+    font-size: 1.4rem;
+    --content: 'ING. EN ELECTRÓNICA Y COMUNICACIONES';
+    --start-color: #f000bc;
+    --end-color: #df004e;
+    --delay: 4s;
+}
+
+.hero img {
+    width: 40%;
+}
+
+.hero h1 span::before {
+    background: linear-gradient(90deg, var(--start-color), var(--end-color));
+    content: var(--content);
+    position: absolute;
+    inset: 0;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: animated 8s infinite;
+    animation-delay: var(--delay);
+    background-size: contain;
+
+}
+
+@keyframes animated {
+
+    0%,
+    16.667%,
+    100% {
+        opacity: 1;
+    }
+
+    33.333%,
+    83.333% {
+        opacity: 0;
+    }
+}
+
+.projects {
+    height: 100vh;
+    /* background-image: url(./images/fondo.jpeg); */
+    /* background: linear-gradient(to right, #12c2e9, #c471ed, #f64f59); */
+    background-image: url(./images/fondoproj.svg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+
+
+.projects-container {
+    width: 80%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    margin: 0 auto;
+    flex-wrap: wrap;
+
+
+}
+
+.card {
+    width: 340px;
+    height: 240px;
+    background: #00A19B;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    transition: 0.2s ease-in-out;
+    margin: 1rem 2rem;
+
+}
+
+.img {
+    border-radius: 20px;
+    width: 330px;
+    position: absolute;
+    transition: 0.2s ease-in-out;
+    z-index: 1;
+    object-fit: contain;
+
+}
+
+.textBox {
+    opacity: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    transition: 0.2s ease-in-out;
+    z-index: 2;
+    background-color: #ffffff45;
+    border-radius: 5px;
+    padding: .5rem;
+
+
+}
+
+.textBox>.text {
+    font-weight: bold;
+}
+
+.textBox>.head {
+    font-size: 25px;
+}
+
+.textBox>.price {
+    font-size: .8rem;
+    text-align: center;
+    margin: 0 20px;
+    padding: 4px;
+
+}
+
+.tech-icon {
+    width: 40px;
+
+}
+
+.textBox>span {
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: var(--sec-color);
+
+
+}
+
+.card:hover>.textBox {
+    opacity: 1;
+}
+
+.card:hover>.img {
+    height: 100%;
+    filter: blur(7px);
+    animation: anim 3s infinite;
+}
+
+@keyframes anim {
+    0% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-10px);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
+}
+
+.card:hover {
+    transform: scale(1.2) rotate(-1deg);
+}
+
+
+
+
+@media (max-width: 660px) {
+    .hero img {
+        display: none;
+    }
+
+    .hero-name {
+        width: 100%;
+    }
+}
+
+@media (max-width: 426px) {
+
+
+    header {
+        width: 100%;
+        height: 3rem;
+        flex-direction: row;
+        bottom: 0;
+        border-radius: 0;
+        position: fixed;
+        border-top: solid 1px #fb6e85;
+        box-shadow: none;
+    }
+
+    .nav-links {
+        display: none;
+    }
+
+    .nav-mobile {
+        display: flex;
+    }
+    .nav-mobile ul li a {
+        color: white;
+    }
+
+
+
+
+
+
+}
+
+@media (max-width: 376px) {
+    .hero {
+        width: 100%;
+        height: 100%;
+    }
+
+
+}
